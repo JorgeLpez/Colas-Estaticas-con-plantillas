@@ -37,9 +37,6 @@ class Cola{
         T datos[TAM];
         int ult,Frente;
         bool elimina(int);
-//        bool inserta(T , int);
-//        int primero()const;
-//        int ultimo()const;
 
     public:
         Cola():ult(0),Frente(0){}
@@ -93,63 +90,6 @@ T Cola<T>::Front()const
     }
 }
 
-//template<class T>
-//T Cola<T>::Front()const{
-//    T x=datos[primero()];
-//    return x;
-//}
-//
-//template<class T>
-//bool Cola<T>::Dequeue(){
-//    if(Vacia()){
-//        return false;
-//    }
-//    else{
-//        elimina(primero());
-//    }
-//    return true;
-//}
-//
-//template<class T>
-//bool Cola<T>::Enqueue(T& elem){
-//    if(llena()){
-//        return false;
-//    }
-//    if(Vacia()){
-//        inserta(elem,0);
-//    }
-//    else{
-//        inserta(elem, ultimo()+1);
-//    }
-//    return true;
-//}
-//
-//template<class T>
-//bool Cola<T>::Vacia()const{
-//    return ult==-1;
-//}
-//
-//template<class T>
-//bool Cola<T>::llena()const{
-//    return ult==TAM-1;
-//}
-//
-//template<class T>
-//bool Cola<T>::inserta(T elem, int pos){
-//    if(llena() || pos<0 || pos>ult+1){
-//        std::cout<<"\n No se pudo insertar";
-//        return false;
-//    }
-//    int i=ult+1;
-//    while(i>pos){
-//        datos[i]=datos[i-1];
-//        i--;
-//    }
-//    datos[pos]=elem;
-//    ult++;
-//    return true;
-//}
-//
 template<class T>
 bool Cola<T>::elimina(int pos){
     if(Vacia() || pos<0 || pos>ult){
@@ -165,50 +105,21 @@ bool Cola<T>::elimina(int pos){
     return true;
 }
 
-//template<class T>
-//int Cola<T>::primero()const{
-//    if(Vacia()){
-//       return -1;
-//    }
-//    return 0;
-//}
-//
-//template<class T>
-//int Cola<T>::ultimo()const{
-//    if(Vacia()){
-//       return -1;
-//    }
-//    return ult;
-
-
 int main()
 {
         int opc,cont;
         Cola<Constancia> Micola;
         Constancia x;
-//    std::cout<<"\n AColacion"<<std::endl;
-//    for(int i=1;i<=4;i++){
-//        std::cin>>x;
-//        Micola.Enqueue(x);
-//    }
-//
-//    std::cout<<"\n\n\n DesaColado"<<std::endl;
-//    for(int i=1;i<=4;i++){
-//        x=Micola.Front();
-//        std::cout<<x<<std::endl;
-//        Micola.DeEnqueue();
-//    }
+        do{
+            system("cls");
+            std::cout<<"\n\tCONSTANCIAS DE ESTUDIO"<<std::endl<<std::endl;
+            std::cout<<"1. Generar solicitud para constancia."<<std::endl;
+            std::cout<<"2. Recibir constancia."<<std::endl;
+            std::cout<<"3. Salir."<<std::endl<<std::endl;
+            std::cout<<"Ingrese una opcion: ";
+            std::cin>>opc;
 
-    do{
-        system("cls");
-        std::cout<<"\n\tCONSTANCIAS DE ESTUDIO"<<std::endl<<std::endl;
-        std::cout<<"1. Generar solicitud para constancia."<<std::endl;
-        std::cout<<"2. Recibir constancia."<<std::endl;
-        std::cout<<"3. Salir."<<std::endl<<std::endl;
-        std::cout<<"Ingrese una opcion: ";
-        std::cin>>opc;
-
-        switch(opc){
+            switch(opc){
 
             case 1: system("cls");
                     cont++;
@@ -238,6 +149,5 @@ int main()
                     system("pause");
                     break;
         }
-
     }while(opc!=3);
 }
